@@ -51,8 +51,8 @@ We stuck to the basics to build something fast, powerful, and accessible.
 ---
 
 ## 👥 Team Noob Hackers
-* **[Priyam Patra]** - Frontend & GEN AI
-* **[Ayusman Dey]** - [UI-UX Designer]
+* **Priyam Patra** - Frontend & GEN AI
+* **Ayusman Dey** - UI-UX Designer
 
 
 ## 🏁 Getting Started (Judge's Guide)
