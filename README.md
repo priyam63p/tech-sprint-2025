@@ -15,16 +15,16 @@ As Noob Hackers, we know the struggle is real. Setting up a frontend project oft
 We wanted to build the tool we wish we had: an "Instant Prototyping Engine" that allows anyone—from total noobs to pros—to go from a text idea to a live, industry-standard website in seconds.
 
 ## 🤖 What it does
-  ASTHETIX is a browser-based autonomous frontend architect.
+  **ASTHETIX** is a browser-based autonomous frontend architect.
 1.  **Understand:** It takes a natural language prompt (e.g., "A personal portfolio with a neon dark theme").
-2.  **Architect:** It uses **Google Gemini 1.5 Flash** to generate semantic HTML, responsive CSS, and interactive JavaScript simultaneously.
+2.  **Architect:** It uses **Google Gemini 2.5 Flash** to generate semantic HTML, responsive CSS, and interactive JavaScript simultaneously.
 3.  **Deploy:** It utilizes a **Virtual File System** to inject the code into a secure sandbox, providing an instant **Live Preview**.
 4.  **Refine:** It acts as a Senior Engineer, ensuring the generated code follows industry standards (8px grids, semantic tags, and responsive layouts).
 
 ## ⚙️ How we built it
 We stuck to the basics to build something fast, powerful, and accessible.
 
-* **The Brain:** We integrated the **Google Gemini API** (`gemini-1.5-flash`). We used advanced "System Instructions" to force the AI to produce complete, 3-file deployments (HTML/CSS/JS) in a single shot.
+* **The Brain:** We integrated the **Google Gemini API** (`gemini-2.5-flash`). We used advanced "System Instructions" to force the AI to produce complete, 3-file deployments (HTML/CSS/JS) in a single shot.
 * **The System:** We built a **Client-Side Virtual File System**. Instead of a backend server, we use **Blob URLs** (`URL.createObjectURL`) to dynamically link the generated CSS and JS strings to the HTML `<iframe>` in real-time.
 * **The UI:** We designed a custom **Cyberpunk/Glassmorphism interface** from scratch to give it a futuristic "hacker" aesthetic.
 
