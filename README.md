@@ -1,6 +1,6 @@
 <img width="3168" height="1344" alt="Gemini_Generated_Image_t5sf5st5sf5st5sf" src="https://github.com/user-attachments/assets/36af7871-41ee-4237-a0a4-934283c242ff" /># Tech-Sprint-2025
 
-# ⚡ASTHETIX
+# ⚡ASthetiX
 
 > Built by Team Noob Hackers for TechSprint 2025-2026
 
@@ -52,25 +52,33 @@ We stuck to the basics to build something fast, powerful, and accessible.
 
 ## 👥 Team Noob Hackers
 * **[Priyam Patra]** - Frontend & Prompt Engineering
-* **[Teammate Name]** - [Role]
-* **[Teammate Name]** - [Role]
+* **[Ayushmann Dey]** - [UI-UX Designer]
+
 
 ## 🏁 Getting Started (Judge's Guide)
-To test the project locally:
 
+### 🔑 Step 1: Get Your Free API Key
+To use ASthetiX, you need a Google Gemini API Key. It's free and takes 1 minute to get:
+1.  Go to [Google AI Studio](https://aistudio.google.com/app/apikey).
+2.  Click **"Create API Key"**.
+3.  Select "Create API key in new project".
+4.  Copy the key (it starts with `AIza...`).
+
+### 💻 Step 2: Run the Project Locally
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/your-username/structura-ai.git](https://github.com/your-username/structura-ai.git)
-    cd structura-ai
+    git clone [https://github.com/your-username/asthetix.git](https://github.com/your-username/asthetix.git)
+    cd asthetix
     ```
 
 2.  **Run a local server:**
-    * If using VS Code, right-click `index.html` and select **"Open with Live Server"**.
-    * Or use Python: `python -m http.server`
+    * **Using VS Code (Recommended):** Install the "Live Server" extension, right-click `index.html`, and select **"Open with Live Server"**.
+    * **Using Python:** Open terminal and run `python -m http.server`
+    * **Using Node:** Open terminal and run `npx serve .`
 
 3.  **Launch:**
-    * Open `http://localhost:5500` (or your port).
-    * Enter your **Gemini API Key**.
+    * Open your browser to `http://localhost:5500` (or the port shown).
+    * Paste your **Gemini API Key** into the neon modal.
     * Type a prompt (e.g., *"A login page for a space travel agency"*) and hit **Execute**!
 
 ---
