@@ -51,7 +51,7 @@ We stuck to the basics to build something fast, powerful, and accessible.
 ---
 
 ## 👥 Team Noob Hackers
-* **[Your Name]** - Frontend & Prompt Engineering
+* **[Priyam Patra]** - Frontend & Prompt Engineering
 * **[Teammate Name]** - [Role]
 * **[Teammate Name]** - [Role]
 
@@ -75,4 +75,4 @@ To test the project locally:
 
 ---
 
-**Built with ❤️ and Caffeine by Team Noob Hackers.**
+**Built with ❤️ by Team Noob Hackers.**
