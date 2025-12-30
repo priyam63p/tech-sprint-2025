@@ -1,0 +1,353 @@
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-pink: #bc13fe;
+  --bg-dark: #050505;
+  --glass-bg: rgba(10, 10, 20, 0.6);
+  --glass-border: rgba(0, 243, 255, 0.2);
+  --font-main: "Rajdhani", sans-serif;
+  --font-display: "Orbitron", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-main);
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #111122 0%, #000 100%);
+}
+
+.bg-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(0, 243, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+  border-radius: 8px;
+}
+
+.modal-content {
+  padding: 3rem;
+  text-align: center;
+  width: 400px;
+}
+
+.neon-text-flicker {
+  font-family: var(--font-display);
+  color: var(--neon-cyan);
+  font-size: 2rem;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px;
+  outline: none;
+  font-family: var(--font-main);
+  transition: 0.3s;
+}
+input:focus {
+  border-color: var(--neon-pink);
+}
+
+.neon-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 10px 30px;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.neon-btn:hover {
+  background: var(--neon-cyan);
+  color: black;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+.neon-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+.highlight {
+  color: var(--neon-pink);
+}
+.badge {
+  background: var(--neon-pink);
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.status-indicator {
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  display: block;
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 243, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0);
+  }
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.preview-panel {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.panel-header {
+  font-family: var(--font-display);
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.chat-content {
+  flex: 1;
+  overflow-y: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+.ai-msg {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+.user-msg {
+  margin-bottom: 10px;
+  color: var(--neon-pink);
+  text-align: right;
+}
+.label {
+  color: var(--neon-cyan);
+  font-weight: bold;
+}
+
+.file-grid {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  align-content: start;
+}
+
+.file-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.file-card:hover {
+  border-color: var(--neon-pink);
+}
+.file-icon {
+  font-size: 2rem;
+  color: var(--neon-cyan);
+  margin-bottom: 10px;
+  display: block;
+}
+.file-name {
+  font-weight: bold;
+  color: white;
+  display: block;
+}
+.file-path {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.neon-btn-small {
+  background: var(--neon-pink);
+  border: none;
+  color: white;
+  padding: 0 30px;
+  font-weight: bold;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.neon-btn-small:hover {
+  box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* --- TABS SYSTEM --- */
+.tab-header {
+  display: flex;
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 10px;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: white;
+}
+
+.tab-btn.active {
+  color: var(--neon-cyan);
+  border-bottom: 2px solid var(--neon-cyan);
+  background: rgba(0, 243, 255, 0.05);
+}
+
+.view-content {
+  display: none;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.view-content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- IFRAME PREVIEW --- */
+#previewFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  border-radius: 5px;
+}
+
+.glow-effect {
+  box-shadow: 0 0 10px var(--neon-pink);
+  animation: pulse 2s infinite;
+}
+
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-pink: #bc13fe;
+  --bg-dark: #050505;
+  --glass-bg: rgba(10, 10, 20, 0.8);
+  --glass-border: rgba(0, 243, 255, 0.2);
+  --font-main: "Rajdhani", sans-serif;
+  --font-display: "Orbitron", sans-serif;
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+  padding: 20px 0;
+}
